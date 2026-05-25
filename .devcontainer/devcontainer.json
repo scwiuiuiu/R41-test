@@ -4,7 +4,6 @@
     // 2. 设置默认容器内的用户名
     "remoteUser": "root",
     // 3. 设置容器内的工作区路径，VS Code 会自动将其映射为工作区
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached",
     "workspaceFolder": "/workspaces",
     // 4. 指定 VS Code 需要安装的扩展，以增强 ROS 开发体验
     "extensions": [
