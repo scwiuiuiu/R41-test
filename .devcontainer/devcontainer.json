@@ -1,0 +1,19 @@
+{
+    // 1. 指定基础镜像：这里使用官方 ROS 2 Humble 的完整桌面版镜像
+    "image": "osrf/ros:humble-desktop-full",
+    // 2. 设置默认容器内的用户名
+    "remoteUser": "root",
+    // 3. 设置容器内的工作区路径，VS Code 会自动将其映射为工作区
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached",
+    "workspaceFolder": "/workspaces",
+    // 4. 指定 VS Code 需要安装的扩展，以增强 ROS 开发体验
+    "extensions": [
+        "ms-vscode.cpptools",          // C/C++ 智能提示
+        "ms-python.python",             // Python 支持
+        "redhat.java",                  // Java 支持 (可选)
+        "twxs.cmake",                   // CMake 支持
+        "zachflower.ignore-file-generator" // .gitignore 生成
+    ],
+    // 5. 设置容器启动后自动执行的脚本，用于安装一些 ROS 之外的工具 (可选)
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y git"
+}
